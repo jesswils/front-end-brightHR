@@ -46,6 +46,14 @@ test.describe('Access documents', () => {
 	test('user is able to sort folders by name', async ({ page }) => {
 		// expect to see folders sorted in alphabetical order
 		// also in reverse order
+		await page.getByText('Sort by name').click();
+		await expect(page.getByRole('table')).toContainText(
+			'Cost centres, Employee Handbook, Expenses, Misc, Public Holiday policy'
+		);
+		await page.getByText('Sort by name').click(); // click again to view in reverse order
+		await expect(page.getByRole('table')).toContainText(
+			'Public Holiday policy, Misc, Expenses, Employee Handbook, Cost centres'
+		);
 	});
 
 	// test('user is able to sort folders by size', async ({ page }) => {
