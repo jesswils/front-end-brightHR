@@ -5,9 +5,6 @@ test.describe('Access documents', () => {
 		await page.goto('http://localhost:3000/');
 	});
 
-	// check the app is online
-	// check the table is visible
-
 	test('on initial page load, user is able to see all files and folders', async ({
 		page,
 	}) => {
