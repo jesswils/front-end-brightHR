@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { data } from '../data';
 
 const Table = () => {
-	const [expandedFolder, setExpandedFolder] = useState<string | null>(null);
+	const [expandedFolders, setExpandedFolders] = useState<{
+		[key: string]: boolean;
+	}>({});
 
 	const handleFolders = (folderName: string) => {
-		setExpandedFolder(
-			(prevFolder) => (prevFolder === folderName ? null : folderName) // Toggle the expandedFolder state to either the clicked folder name or null
-		);
+		setExpandedFolders((prevExpandedFolders) => ({
+			...prevExpandedFolders,
+			[folderName]: !prevExpandedFolders[folderName],
+		}));
 	};
 
 	return (
@@ -29,7 +32,7 @@ const Table = () => {
 									>
 										<td className='px-3 py-2 font-bold'>{document.name}</td>
 									</tr>
-									{expandedFolder === document.name && document.files && (
+									{expandedFolders[document.name] && document.files && (
 										<tr>
 											<td>
 												{document.files.map((file, fileKey) => (
