@@ -9,6 +9,18 @@ test.describe('Access documents', () => {
 		page,
 	}) => {
 		// expect to see two pdf documents, two folders and a csv file
+
+		const employeeHandbook = page.getByText('Employee Handbook');
+		const holidayPolicy = page.getByText('Public Holiday policy');
+		const expensesFolder = page.getByText('Expenses');
+		const costCenters = page.getByText('Cost centres');
+		const miscFolder = page.getByText('Misc');
+
+		await expect(employeeHandbook).toBeVisible();
+		await expect(holidayPolicy).toBeVisible();
+		await expect(expensesFolder).toBeVisible();
+		await expect(costCenters).toBeVisible();
+		await expect(miscFolder).toBeVisible();
 	});
 
 	test('user is able to open a folder and view the contents', async ({
