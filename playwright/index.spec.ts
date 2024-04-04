@@ -5,6 +5,9 @@ test.describe('Access documents', () => {
 		await page.goto('http://localhost:3000/');
 	});
 
+	// check the app is online
+	// check the table is visible
+
 	test('on initial page load, user is able to see all files and folders', async ({
 		page,
 	}) => {
@@ -29,6 +32,13 @@ test.describe('Access documents', () => {
 		// user clicks on either folder and is shown the contents
 		// expect to see expenses > claim form and fuel allowance
 		// expect to see misc > christmas party doc and welcome to the company mov
+		await page.getByText('Expenses').click();
+		await expect(page.getByText('Expenses claim form')).toBeVisible();
+		await expect(page.getByText('Fuel allowances')).toBeVisible();
+
+		await page.getByText('Misc').click();
+		await expect(page.getByText('Christmas party')).toBeVisible();
+		await expect(page.getByText('Welcome to the company!')).toBeVisible();
 	});
 
 	test('user is able to sort folders by name', async ({ page }) => {
