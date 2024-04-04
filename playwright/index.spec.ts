@@ -51,12 +51,12 @@ test.describe('Access documents', () => {
 	// test('user is able to sort folders by size', async ({ page }) => {
 	// });
 
-	test('user is able to sort folders by date', async ({ page }) => {
+	test.skip('user is able to sort folders by date', async ({ page }) => {
 		// expect to see date added earliest > latest
 		// also in reverse order
 	});
 
-	test('user is able to filter by filename', async ({ page }) => {
+	test.skip('user is able to filter by filename', async ({ page }) => {
 		// expect to see files sorted in alphabetical order
 		// also in reverse order
 	});
