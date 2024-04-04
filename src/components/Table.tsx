@@ -15,14 +15,16 @@ const Table = () => {
 			<table className='mx-auto mt-10 text-left bg-slate-800 rounded'>
 				<tbody>
 					<tr>
-						<th className='py-2 px-3'>All documents</th>
+						<th className='py-2 px-3 border-b border-neutral-400 bg-slate-700'>
+							All documents
+						</th>
 					</tr>
 					{data.map((document, key) => (
 						<React.Fragment key={key}>
 							{document.type === 'folder' && (
 								<>
 									<tr
-										className='px-6 py-4 whitespace-nowrap border-b border-neutral-400 rounded hover:cursor-pointer'
+										className='px-6 py-4 whitespace-nowrap border-b border-neutral-400 rounded hover:cursor-pointer hover:bg-slate-600'
 										onClick={() => handleFolders(document.name)}
 									>
 										<td className='px-3 py-2 font-bold'>{document.name}</td>
