@@ -12,10 +12,10 @@ const Table = () => {
 
 	return (
 		<section>
-			<table className='mx-auto mt-10 text-left bg-slate-800 rounded'>
+			<table className='table-fixed w-3/12 mx-auto mt-10 text-left bg-slate-800 rounded text-lg'>
 				<tbody>
 					<tr>
-						<th className='py-2 px-3 border-b border-neutral-400 bg-slate-700'>
+						<th className='py-3 px-4 border-b border-neutral-400 bg-slate-700'>
 							All documents
 						</th>
 					</tr>
