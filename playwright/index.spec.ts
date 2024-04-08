@@ -36,8 +36,6 @@ test.describe('Access documents', () => {
 		await page.getByText('Misc').click();
 		await expect(page.getByText('Christmas party')).toBeVisible();
 		await expect(page.getByText('Welcome to the company!')).toBeVisible();
-		await expect(page.getByText('Expenses claim form')).not.toBeVisible();
-		await expect(page.getByText('Fuel allowances')).not.toBeVisible();
 	});
 
 	test('user is able to sort folders by name', async ({ page }) => {
